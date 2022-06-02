@@ -38,30 +38,28 @@ L.control.layers(baseMaps).addTo(map);
 //streets.addTo(map);
 
 // Accessing the Toronto airline routes GeoJSON URL.
-let torontoHoods = "https://raw.githubusercontent.com/kntln/Mapping_Earthquakes/Mapping_GeoJSON_Linestrings/Mapping_GeoJSON_Linestrings/static/js/torontoRoutes.json";
+let torontoHoods = "https://raw.githubusercontent.com/kntln/Mapping_Earthquakes/Mapping_GeoJSON_Polygons/Mapping_GeoJSON_Polygons/static/js/torontoNeighborhoods.json";
 
 
 // Create a style for the lines.
-let myStyle = {
-  color: "yellow",
-  weight: 2
-}
+var myStyle = {
+  fillColor: "#ffffa1",
+  color: "blue",
+  weight: 1
+};
 
 
 // Grabbing our GeoJSON data.
-d3.json(torontoData).then(function(data) {
+d3.json(torontoHoods).then(function(data) {
   console.log(data);
   
-//Creating a GeoJSON layer with the retrieved data.
+// Creating a GeoJSON layer with the retrieved data.
 L.geoJson(data, {
-  // color: "yellow",
-  // weight: 2,
   style: myStyle,
-  onEachFeature: function(feature, layer) {
+  onEachFeature: function(feature,layer){
     console.log(layer);
-    layer.bindPopup( "<h2>" + "Airline Code: "+ feature.properties.airline + "</h2>" + "<hr>" 
-                 + "<h2>" + "Destination: " + feature.properties.dst + "</h2>")
-  }
-
+    layer.bindPopup("<h4> Neighborhood: " + feature.properties.AREA_NAME +"</h4>");
+      }
 }).addTo(map);
+
 });
