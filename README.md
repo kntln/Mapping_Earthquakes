@@ -10,4 +10,4 @@ On the map, the magnitude and the location of each earthquake was shown using a 
 
 ![Satellite View Snapshot](https://github.com/kntln/Mapping_Earthquakes/blob/main/Earthquake_Challenge/images/satellite_view.png)
 
-![Dark View Snapshot](https://github.com/kntln/Mapping_Earthquakes/blob/main/Earthquake_Challenge/images/satellite_view.png)
+![Dark View Snapshot](https://github.com/kntln/Mapping_Earthquakes/blob/main/Earthquake_Challenge/images/dark_view.png)
